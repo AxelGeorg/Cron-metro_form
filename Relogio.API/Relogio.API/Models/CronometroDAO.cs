@@ -11,11 +11,60 @@ namespace Relogio.API.Models
     public class CronometroDAO
     {
         string conexaoString = "Server=localhost;Database=relogio;Uid=root;Pwd=;";
+        string cs = @"Server=localhost;Uid=root;Pwd=;";
         MySqlConnection connection = null;
         MySqlCommand command;
 
         //cria database se não existir
+        public bool criaDataBase()
+        {
+            try
+            {
+                connection = new MySqlConnection(cs);
+                connection.Open(); // abre a conexão
+                command = new MySqlCommand();
+                command.Connection = connection;
+
+                command.CommandType = CommandType.Text;
+                command.CommandText = "create database if not exists Relogio;";
+
+                command.ExecuteNonQuery();
+                command.Connection.Close(); //fecha conexão
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         //criar tabela se não existir
+        public bool criaTabela()
+        {
+            try
+            {
+                connection = new MySqlConnection(conexaoString);
+                connection.Open(); // abre a conexão
+                command = new MySqlCommand();
+                command.Connection = connection;
+
+                command.CommandType = CommandType.Text;
+                command.CommandText = "create table if not exists historicos(cro_id int(14) primary key auto_increment," +
+                                                                            "cro_data varchar(28) not null," +
+                                                                            "cro_horario varchar(28) not null," +
+                                                                            "cro_tempo varchar(28) not null)";
+
+                command.ExecuteNonQuery();
+                command.Connection.Close(); //fecha conexão
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
 
         public bool cadastrarCronometro(string cro_data, string cro_horario, string cro_tempo)
         {

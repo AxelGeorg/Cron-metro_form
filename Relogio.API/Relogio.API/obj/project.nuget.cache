@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hKdwH4yqHEw3cPrGUBgsqiS9/nasFNtNwFXil2+COTxVpkOgiAjKYUKeWZ9tMVXKTzIP6IWNF36G+4epi1PBhw==",
+  "dgSpecHash": "ZUG67O5A1k8F+Y+xpM2Ac36/YIh3ZRECTIEoKm+cumUTl82dvtt801E74U+S3ShTQw//AJT5Z4NGJSQQYRPXcQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fe_ma\\angular\\atividades_c#\\Relogio.API\\Relogio.API\\Relogio.API.csproj",
+  "projectFilePath": "C:\\Users\\fe_ma\\angular\\CronometroComHistórico\\Relogio.API\\Relogio.API\\Relogio.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fe_ma\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\fe_ma\\.nuget\\packages\\google.protobuf\\3.6.1\\google.protobuf.3.6.1.nupkg.sha512",

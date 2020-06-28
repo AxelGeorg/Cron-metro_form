@@ -76,5 +76,47 @@ namespace Relogio.API.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
+        [HttpDelete]
+        [Route("criaTable")]
+        public async Task<IActionResult> criaTable()
+        {
+
+            try
+            {
+                // cria a tabela na base de dados...
+                dao.criaTabela();
+
+                // fez a inserção na base de dados com sucesso, então retorna uma resposta de ok.
+                var resposta = new Resposta { Status = true, Mensagem = "Table criada com sucesso." };
+
+                return Ok(resposta);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        [HttpDelete]
+        [Route("criaDataBase")]
+        public async Task<IActionResult> criaDataBase()
+        {
+
+            try
+            {
+                // cria a tabela na base de dados...
+                dao.criaDataBase();
+
+                // fez a inserção na base de dados com sucesso, então retorna uma resposta de ok.
+                var resposta = new Resposta { Status = true, Mensagem = "DATABASE criada com sucesso." };
+
+                return Ok(resposta);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
     }
 }

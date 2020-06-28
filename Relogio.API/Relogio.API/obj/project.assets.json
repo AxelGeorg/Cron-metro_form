@@ -5957,11 +5957,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fe_ma\\angular\\atividades_c#\\Relogio.API\\Relogio.API\\Relogio.API.csproj",
+      "projectUniqueName": "C:\\Users\\fe_ma\\angular\\CronometroComHistórico\\Relogio.API\\Relogio.API\\Relogio.API.csproj",
       "projectName": "Relogio.API",
-      "projectPath": "C:\\Users\\fe_ma\\angular\\atividades_c#\\Relogio.API\\Relogio.API\\Relogio.API.csproj",
+      "projectPath": "C:\\Users\\fe_ma\\angular\\CronometroComHistórico\\Relogio.API\\Relogio.API\\Relogio.API.csproj",
       "packagesPath": "C:\\Users\\fe_ma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fe_ma\\angular\\atividades_c#\\Relogio.API\\Relogio.API\\obj\\",
+      "outputPath": "C:\\Users\\fe_ma\\angular\\CronometroComHistórico\\Relogio.API\\Relogio.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

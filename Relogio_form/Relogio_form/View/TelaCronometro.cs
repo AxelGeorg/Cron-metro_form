@@ -17,6 +17,7 @@ namespace Relogio_form
     public partial class TelaCronometro : Form
     {
         TelaHistorico tela = new TelaHistorico();
+        CronometroService service = new CronometroService();
         private Stopwatch stopwatch; 
 
         public TelaCronometro()
@@ -24,6 +25,8 @@ namespace Relogio_form
             InitializeComponent();
 
             tela.ListarHistorico();
+            var respostaTable = service.PostTableHistorico();
+            var respostaDataBase = service.PostDataBase();
             timerDataTime.Start();
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -60,7 +63,6 @@ namespace Relogio_form
             string horario = lbl_horario.Text;
             string tempo = lbl_cronometro.Text;
 
-            CronometroService service = new CronometroService();
             Cronometro cronometro = new Cronometro(data, horario, tempo);
             Resposta retorno = new Resposta();
 

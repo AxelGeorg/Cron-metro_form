@@ -96,5 +96,63 @@ namespace Relogio_form.Services
 
             return retorno;
         }
+
+        public async Task<Resposta> PostTableHistorico()
+        {
+            var retorno = new Resposta();
+
+            using (HttpClient client = new HttpClient())
+            {
+                var tpost = client.DeleteAsync(string.Concat(urlWebApi, "cronometro/criaTable"));
+                tpost.Wait();
+
+                var resposta = tpost.Result;
+
+                if (resposta.IsSuccessStatusCode)
+                {
+                    var respostaComoString = await resposta.Content.ReadAsStringAsync();
+
+                    retorno = JsonConvert.DeserializeObject<Resposta>(respostaComoString);
+                }
+                else
+                {
+                    var respostaComoString = await resposta.Content.ReadAsStringAsync();
+
+                    retorno.Status = false;
+                    retorno.Mensagem = string.Concat(resposta.ReasonPhrase, " - ", respostaComoString);
+                }
+            }
+
+            return retorno;
+        }
+
+        public async Task<Resposta> PostDataBase()
+        {
+            var retorno = new Resposta();
+
+            using (HttpClient client = new HttpClient())
+            {
+                var tpost = client.DeleteAsync(string.Concat(urlWebApi, "cronometro/criaDataBase"));
+                tpost.Wait();
+
+                var resposta = tpost.Result;
+
+                if (resposta.IsSuccessStatusCode)
+                {
+                    var respostaComoString = await resposta.Content.ReadAsStringAsync();
+
+                    retorno = JsonConvert.DeserializeObject<Resposta>(respostaComoString);
+                }
+                else
+                {
+                    var respostaComoString = await resposta.Content.ReadAsStringAsync();
+
+                    retorno.Status = false;
+                    retorno.Mensagem = string.Concat(resposta.ReasonPhrase, " - ", respostaComoString);
+                }
+            }
+
+            return retorno;
+        }
     }
 }
